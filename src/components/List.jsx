@@ -3,15 +3,15 @@ import { instanceOf } from 'prop-types'
 
 import Item from './Item'
 
-const List = ({ items }) => (
+const List = ({ data }) => (
   <ul>
     {
-      items.map((item, index) => {
+      data.map((item, index) => {
         const key = index.toString()
         return (
           <Item
             key={key}
-            text={item.text}
+            text={item.title}
           />
         )
       })
@@ -20,11 +20,11 @@ const List = ({ items }) => (
 )
 
 List.defaultProps = {
-  items: []
+  data: []
 }
 
 List.propTypes = {
-  items: instanceOf(Array)
+  data: instanceOf(Array)
 }
 
 export default List

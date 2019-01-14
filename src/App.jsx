@@ -1,26 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import List from './components/List'
 import Form from './components/Form'
 
 const App = () => {
-  const [items, setItems] = useState([]);
+  const [jobs, setJobs] = useState([]);
 
-  const onAdd = (text) => {
-    console.log(text)
-    items.push({
-      text
-    })
+  const handleAdd = (job) => {
+    jobs.push(job)
 
-    setItems(items)
+    setJobs(jobs)
   }
+
+  useEffect(() => {
+    fetch('https://codepen.io/jobs.json')
+      .then(response => response.json())
+      .then(data => setJobs(data.jobs))
+  }, [])
 
   return (
     <div>
       <Form
-        onAdd={onAdd}
+        handleAdd={handleAdd}
       />
-      <List items={items} />
+      <List data={jobs} />
     </div>
   )
 }

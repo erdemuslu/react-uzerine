@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import { func } from 'prop-types'
 
-const Form = ({ onAdd }) => {
-  const [value, setValue] = useState('')
+const Form = ({ handleAdd }) => {
+  const [title, setTitle] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    onAdd(value)
-    setValue('')
+    handleAdd({ title })
+    setTitle('')
   }
 
-  const onChange = (event) => {
-    setValue(event.target.value)
+  const onChange = ({ target: { value } }) => {
+    setTitle(value)
   }
 
   return (
@@ -22,7 +22,7 @@ const Form = ({ onAdd }) => {
         type="text"
         name="item"
         placeholder="type sometihng"
-        value={value}
+        value={title}
         onChange={onChange}
       />
       <button type="submit">Submit</button>
@@ -31,11 +31,11 @@ const Form = ({ onAdd }) => {
 }
 
 Form.defaultProps = {
-  onAdd: null
+  handleAdd: null
 }
 
 Form.propTypes = {
-  onAdd: func
+  handleAdd: func
 }
 
 export default Form

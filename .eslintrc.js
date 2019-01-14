@@ -1,6 +1,9 @@
 module.exports = {
   "extends": "airbnb",
   "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
   "globals": {
     "document": false,
     "window": true
