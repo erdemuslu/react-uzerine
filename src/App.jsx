@@ -1,7 +1,7 @@
 import React from 'react'
 
 const App = () => (
-  <div className="container container--full">
+  <div>
     React app rendered
   </div>
 )
