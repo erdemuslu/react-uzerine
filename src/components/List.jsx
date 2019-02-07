@@ -1,30 +1,30 @@
-import React from 'react'
-import { instanceOf } from 'prop-types'
+import React, { useContext } from 'react'
 
-import Item from './Item'
+// load main context
+import { MainContext } from '../store/Store'
 
-const List = ({ data }) => (
-  <ul>
-    {
-      data.map((item, index) => {
-        const key = index.toString()
-        return (
-          <Item
-            key={key}
-            text={item.title}
-          />
-        )
-      })
-    }
-  </ul>
-)
+const Child = () => {
+  const { state } = useContext(MainContext)
 
-List.defaultProps = {
-  data: []
+  return (
+    <div>
+      <ul>
+        {
+          state.map((item, index) => {
+            const key = index.toString()
+            return (
+              <li
+                key={key}
+              >
+                <h1>{item.name}</h1>
+                <h5>{item.title}</h5>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+  )
 }
 
-List.propTypes = {
-  data: instanceOf(Array)
-}
-
-export default List
+export default Child
