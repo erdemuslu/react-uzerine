@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import List from './components/List'
 import Form from './components/Form'
-import Child from './components/Child'
-
-const MainContainer = React.createContext()
 
 const App = () => {
   const [jobs, setJobs] = useState([]);
@@ -22,13 +19,12 @@ const App = () => {
   }, [])
 
   return (
-    <MainContainer.Provider data={jobs}>
+    <div>
       <Form
         handleAdd={handleAdd}
       />
       <List data={jobs} />
-      <Child />
-    </MainContainer.Provider>
+    </div>
   )
 }
 
