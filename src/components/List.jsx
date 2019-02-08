@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 // load main context
 import { MainContext } from '../store/Store'
 
-const Child = () => {
+const List = () => {
   const { state } = useContext(MainContext)
 
   return (
@@ -27,4 +27,4 @@ const Child = () => {
   )
 }
 
-export default Child
+export default List

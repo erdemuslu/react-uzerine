@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { createContext, useReducer } from 'react'
 import { node } from 'prop-types'
 
 // load reducers
@@ -17,7 +17,7 @@ const users = [
 ]
 
 // create context
-export const MainContext = React.createContext(users);
+export const MainContext = createContext(users);
 
 // create Store
 function Store({ children }) {
