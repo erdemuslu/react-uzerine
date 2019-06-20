@@ -8,6 +8,9 @@ import { MainContext } from '../../store/Store';
 import updateIndex from '../../actions/updateIndex';
 import updateStyle from '../../actions/updateStyle';
 
+// load data
+import componentsData from '../../data/componentsData';
+
 function Button({ text }) {
   const { state, dispatch } = useContext(MainContext);
 
@@ -22,7 +25,8 @@ function Button({ text }) {
     // second animation
     setTimeout(() => {
       dispatch(updateIndex(state.index + 1))
-      // redefine style
+
+      // reset style
       dispatch(updateStyle({
         transform: 'translateX(100%)',
         opacity: 0
@@ -41,7 +45,7 @@ function Button({ text }) {
   return (
     <button
       type="button"
-      onClick={handle}
+      onClick={componentsData.length <= state.index + 1 ? null : handle}
     >
       { text }
     </button>

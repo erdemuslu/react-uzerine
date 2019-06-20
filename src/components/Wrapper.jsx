@@ -1,22 +1,17 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 
 // load main context
 import { MainContext } from '../store/Store';
 
-// load components
-import Welcome from './Welcome';
-import Article from './Article';
+// load data
+import componentsData from '../data/componentsData';
 
 function Wrapper() {
   const { state } = useContext(MainContext);
 
-  const [components] = useState([
-    <Welcome />, <Article />
-  ]);
-
   return (
     <div role="main" className="wrapper">
-      { components[state.index] }
+      { componentsData[state.index] }
     </div>
   )
 }
