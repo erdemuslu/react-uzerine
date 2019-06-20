@@ -6,7 +6,7 @@ import { MainContext } from '../../store/Store';
 
 // load action
 import updateIndex from '../../actions/updateIndex';
-import updateStyle from '../../actions/updateStyle';
+import { resetStyle, outStyle, inStyle } from '../../actions/updateStyle';
 
 // load data
 import componentsData from '../../data/componentsData';
@@ -17,27 +17,18 @@ function Button({ text }) {
   // handle animation
   const handle = () => {
     // first animation
-    dispatch(updateStyle({
-      transform: 'translateX(-100%)',
-      opacity: 0
-    }));
+    dispatch(outStyle());
 
     // second animation
     setTimeout(() => {
       dispatch(updateIndex(state.index + 1))
 
       // reset style
-      dispatch(updateStyle({
-        transform: 'translateX(100%)',
-        opacity: 0
-      }));
+      dispatch(resetStyle());
 
       setTimeout(() => {
         // reagain animation
-        dispatch(updateStyle({
-          transform: 'translateX(0)',
-          opacity: 1
-        }));
+        dispatch(inStyle());
       }, 10);
     }, 320);
   }

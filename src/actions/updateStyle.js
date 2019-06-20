@@ -1,3 +1,3 @@
-const updateStyle = val => ({ type: 'updateStyle', val })
-
-export default updateStyle;
+export const resetStyle = () => ({ type: 'resetStyle' });
+export const outStyle = () => ({ type: 'outStyle' });
+export const inStyle = () => ({ type: 'inStyle' });
