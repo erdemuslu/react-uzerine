@@ -2,30 +2,28 @@ import React, { createContext, useReducer } from 'react'
 import { node } from 'prop-types'
 
 // load reducers
-import userReducer from '../reducer/userReducer'
+import mainReducer from '../reducer/mainReducer'
 
 // craete initial payload
-const users = [
-  {
-    name: 'Algun',
-    title: 'developer'
-  },
-  {
-    name: 'Ahmet',
-    title: 'developer'
+const payload = {
+  index: 0,
+  style: {
+    transform: 'translateX(0)',
+    opacity: 1
   }
-]
+}
 
 // create context
-export const MainContext = createContext(users);
+export const MainContext = createContext(payload);
 
 // create Store
 function Store({ children }) {
-  const [state, dispatch] = useReducer(userReducer, users);
+  const [state, dispatch] = useReducer(mainReducer, payload);
   const value = { state, dispatch };
+
   return (
     <MainContext.Provider value={value}>
-      {children}
+      { children }
     </MainContext.Provider>
   )
 }
