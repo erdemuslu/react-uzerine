@@ -27,7 +27,6 @@ function Button({ text }) {
       dispatch(resetStyle());
 
       setTimeout(() => {
-        // reagain animation
         dispatch(inStyle());
       }, 10);
     }, 320);
