@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel serve index.html -d build --port 5000",
-    "watch": "parcel watch index.html -d build",
-    "build": "parcel build index.html -d build --no-cache --no-source-maps"
+    "start": "parcel serve index.html",
+    "watch": "parcel watch index.html",
+    "build": "parcel build index.html --no-cache --no-source-maps"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,8 @@
     "parcel-bundler": "^1.12.3"
   },
   "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
