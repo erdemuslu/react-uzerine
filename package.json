@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel serve index.html -d build --port 5000",
-    "watch": "parcel watch index.html -d build",
+    "start": "parcel index.html -d build",
     "build": "parcel build index.html -d build --no-cache --no-source-maps"
   },
   "repository": {
