@@ -65,3 +65,4 @@ typings/
 
 # parcel build folder
 build
+dist
