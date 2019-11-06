@@ -12,6 +12,12 @@ const UserDetails = ({ username }) => {
     );
   }
 
+  if (error) {
+    return (
+      <h1 style={{ color: 'red' }}>Something wrong</h1>
+    );
+  }
+
   return (
     <div>
       {
