@@ -14,14 +14,16 @@ const UserDetails = ({ username }) => {
 
   if (error) {
     return (
-      <h1 style={{ color: 'red' }}>Something wrong</h1>
+      <h1 style={{ color: 'red' }}>
+        {`Something wrong: ${error.message}`}
+      </h1>
     );
   }
 
   return (
     <div>
       {
-        user && user.name
+        user
           ? (
             <div>
               <h1>User details:</h1>
