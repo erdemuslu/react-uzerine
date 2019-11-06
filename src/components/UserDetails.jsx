@@ -4,7 +4,13 @@ import { string } from 'prop-types';
 import useGithub from '../hooks/useGithub';
 
 const UserDetails = ({ username }) => {
-  const user = useGithub(username);
+  const { user, error, isLoading } = useGithub(username);
+
+  if (isLoading) {
+    return (
+      <h1>Loading...</h1>
+    );
+  }
 
   return (
     <div>

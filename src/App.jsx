@@ -20,9 +20,11 @@ const App = () => {
       >
         Fetch
       </button>
-      <UserDetails
-        username={username}
-      />
+      {
+        username
+          ? <UserDetails username={username} />
+          : null
+      }
     </div>
   );
 };
