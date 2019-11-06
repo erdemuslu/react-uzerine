@@ -1,24 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const App = () => {
-  useEffect(() => {
-    async function fetchImg() {
-      try {
-        const res = await fetch('https://cataas.com/cat/says/hello');
-        const data = res.json();
+  const [user, setUser] = useState({});
 
-        console.log(data);
+  useEffect(() => {
+    async function fetchUser() {
+      try {
+        const res = await fetch('https://api.github.com/users/erdemuslu');
+        const data = await res.json();
+        setUser(data);
       } catch (err) {
-        console.loog(err);
+        throw new Error(`'Opps!' ${err}`);
       }
     }
 
-    fetchImg();
+    fetchUser();
   }, []);
 
   return (
     <div>
-      React app rendered
+      <input
+        type="text"
+        placeholder="type an username"
+      />
+      {
+        Object.values(user).length > 0
+          ? (
+            <div>
+              <h1>User details:</h1>
+              <p>{`Fullname: ${user.name}`}</p>
+              <img src={user.avatar_url} alt="avatar" />
+            </div>
+          )
+          : <h1>loading</h1>
+      }
     </div>
   );
 };

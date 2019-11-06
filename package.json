@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --no-cache --no-source-maps"
+    "build": "parcel build index.html --no-cache --no-source-maps",
+    "clear": "rm -rf .cache dist"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
@@ -36,6 +38,7 @@
     "parcel-bundler": "^1.12.3"
   },
   "dependencies": {
+    "@babel/runtime": "^7.6.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   }
