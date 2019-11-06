@@ -1,39 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+
+import UserDetails from './components/UserDetails';
 
 const App = () => {
-  const [user, setUser] = useState({});
-
-  useEffect(() => {
-    async function fetchUser() {
-      try {
-        const res = await fetch('https://api.github.com/users/erdemuslu');
-        const data = await res.json();
-        setUser(data);
-      } catch (err) {
-        throw new Error(`'Opps!' ${err}`);
-      }
-    }
-
-    fetchUser();
-  }, []);
+  let inputRef;
+  const [username, setUsername] = useState(null);
 
   return (
     <div>
       <input
         type="text"
         placeholder="type an username"
+        ref={(e) => { inputRef = e; }}
       />
-      {
-        Object.values(user).length > 0
-          ? (
-            <div>
-              <h1>User details:</h1>
-              <p>{`Fullname: ${user.name}`}</p>
-              <img src={user.avatar_url} alt="avatar" />
-            </div>
-          )
-          : <h1>loading</h1>
-      }
+      <button
+        type="button"
+        aria-label="button"
+        onClick={() => { setUsername(inputRef.value); }}
+      >
+        Fetch
+      </button>
+      <UserDetails
+        username={username}
+      />
     </div>
   );
 };
