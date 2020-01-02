@@ -11,3 +11,5 @@
 [useEffect Kullanimi Uzerine](https://medium.com/@erdemuslu/useeffect-kullanimi-uzerine-30328ac22742)
 
 [Custom React Hooks](https://medium.com/@erdemuslu/custom-react-hooks-aa88c1305cef)
+
+[Concurrent Mode ve Suspense Nedir? Neler Getiriyor?](https://medium.com/@erdemuslu/concurrent-mode-ve-suspense-nedir-neler-getiriyor-955a7aeb06f6)
