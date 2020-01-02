@@ -8,7 +8,11 @@ const List = () => {
   const data = posts.get();
   return (
     <div>
-      {data.map((item, index) => <div key={index.toString()}>{item.title}</div>)}
+      {
+        data.map(
+          (item, index) => <div key={index.toString()} role="grid">{item.title}</div>
+        )
+      }
     </div>
   );
 };
