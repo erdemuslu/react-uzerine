@@ -6,7 +6,6 @@ module.exports = {
     "window": true
   },
   "rules": {
-    "semi": 0,
     "strict": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-console": 0,
