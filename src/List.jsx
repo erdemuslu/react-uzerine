@@ -4,8 +4,8 @@ import getPosts from './api';
 
 const posts = getPosts();
 
-const List = () => {
-  const data = posts.get();
+const List = ({ fetchType }) => {
+  const data = posts.get(fetchType);
   return (
     <div>
       {
