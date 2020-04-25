@@ -35,7 +35,7 @@ function Store() {
 decorate(Store, {
   name: observable,
   status: observable,
-  data: observable,
+  lyricsData: observable,
   updateName: action,
   getLyrics: action,
 });
