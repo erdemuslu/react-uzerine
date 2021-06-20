@@ -5,6 +5,9 @@ module.exports = {
     "document": false,
     "window": true
   },
+  env: {
+    jest: true
+  },
   "rules": {
     "semi": 0,
     "strict": 0,
