@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { string, shape } from 'prop-types';
-// import './Card.css';
+import { string, arrayOf } from 'prop-types';
+import './Card.css';
 import helpers from './helpers';
 
 const Card = ({
@@ -20,7 +20,6 @@ const Card = ({
       <p>
         {desc}
       </p>
-      <div className="erdem">erdem</div>
       <ul>
         {
           !!filteredData().length && filteredData().length > 0 && filteredData().map((item, index) => (
@@ -37,12 +36,11 @@ const Card = ({
   )
 }
 
-
 Card.propTypes = {
   title: string,
   desc: string,
   buttonText: string,
-  data: shape([])
+  data: arrayOf(string)
 }
 
 Card.defaultProps = {
