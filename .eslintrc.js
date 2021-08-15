@@ -3,7 +3,8 @@ module.exports = {
   "parser": "babel-eslint",
   "globals": {
     "document": false,
-    "window": true
+    "window": true,
+    "fetch": true
   },
   "rules": {
     "semi": 0,
